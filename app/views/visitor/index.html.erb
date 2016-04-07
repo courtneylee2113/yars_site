@@ -1,0 +1,6 @@
+<h1>Visitor Index</h1>
+
+<% @projects.each do |p| %>
+	<%= link_to "#{p.name}", project_path(p) %>
+
+<% end %>
