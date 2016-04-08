@@ -11,6 +11,11 @@
 </p>
 
 <p>
+	<strong>Base Image</strong>
+	<%= image_tag @project.base_image.thumb.url %>
+</p>
+
+<p>
 <% @projects.each do |p| %>
 	<%= link_to "#{p.name}", project_path(p) %>
 <% end %>
