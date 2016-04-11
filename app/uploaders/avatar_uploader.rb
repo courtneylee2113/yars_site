@@ -31,8 +31,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  def resize_to_fit(width, height)
-    
+  # def resize_to_fit(width, height)
+
+  # end
+  def resize_to_fit(width, height, combine_options: {})
+    manipulate! do |img|
+      img.combine_options do |cmd|
+        cmd.resize "#{width}x#{height}"
+        append_combine_options cmd, combine_options
+      end
+      img = yield(img) if block_given?
+      img
+    end
   end
 
   # Create different versions of your uploaded files:
@@ -46,10 +56,42 @@ class AvatarUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def manipulate!
+    cache_stored_file! if !cached?
+    image = ::MiniMagick::Image.open(current_path)
+
+    begin
+      image.format(@format.to_s.downcase, @page) if @format
+      image = yield(image)
+      image.write(current_path)
+
+      if @format
+        move_to = current_path.chomp(File.extname(current_path)) + ".#{@format}"
+        file.move_to(move_to, permissions, directory_permissions)
+      end
+
+      image.run_command("identify", current_path)
+    ensure
+      image.destroy!
+    end
+  rescue ::MiniMagick::Error, ::MiniMagick::Invalid => e
+    default = I18n.translate(:"errors.messages.mini_magick_processing_error", :e => e, :locale => :en)
+    message = I18n.translate(:"errors.messages.mini_magick_processing_error", :e => e, :default => default)
+    raise CarrierWave::ProcessingError, message
+  end
+
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  private
+
+    def append_combine_options(cmd, combine_options)
+      combine_options.each do |method, options|
+        cmd.send(method, options)
+      end
+    end
 
 end
