@@ -4,3 +4,12 @@
 	<%= link_to "#{p.name}", project_path(p) %>
 
 <% end %>
+
+
+<%= simple_form_for(:contact, url: contact_form_path, method: :put) do |f| %>
+	<%= f.input :full_name %>
+	<%= f.input :email %>
+	<%= f.input :body, as: :text, input_html: {rows: 5, cols: 20} %>
+
+	<%= f.submit "Let's Chat" %>
+<% end %>

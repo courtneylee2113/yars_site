@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'visitor#index'
   resources :projects
+  put 'contact_form' => 'visitor#contact_form', as: :contact_form 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
