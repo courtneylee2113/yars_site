@@ -9,8 +9,11 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-	<%= image_tag ("https://s3.amazonaws.com/yarkukhtinprojectimages/logo.svg"), class: 'logo' %>
-	
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= image_tag ("https://s3.amazonaws.com/yarkukhtinprojectimages/logo.svg"), class: 'logo' %>
+
 	<div class="main_container">
 	  <nav class="cl-effect-14" id="cl-effect-14">
 	    <a href="#work" class="menu-item">Work</a>
