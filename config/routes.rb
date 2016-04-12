@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'visitor#index'
+  get 'show_project/:id' => 'visitor#show_project', as: :show_project
   resources :projects
   put 'contact_form' => 'visitor#contact_form', as: :contact_form
   devise_for :user

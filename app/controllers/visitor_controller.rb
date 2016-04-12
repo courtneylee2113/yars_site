@@ -16,4 +16,9 @@ class VisitorController < ApplicationController
 			redirecto_to root_path, notice: 'Email NOT Sent!'
 		end
 	end
+
+	def show_project
+		puts "Params: #{params}"
+		@project = Project.find(params[:id])
+	end
 end
