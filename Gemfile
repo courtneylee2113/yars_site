@@ -28,6 +28,9 @@ gem 'best_debugger'
 gem 'carrierwave', '0.10.0'
 gem "mini_magick"
 gem "fog"
+gem "figaro"
+
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
