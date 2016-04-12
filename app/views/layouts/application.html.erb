@@ -5,8 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://use.typekit.net/xqc1ygk.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
+	<%= image_tag ("https://s3.amazonaws.com/yarkukhtinprojectimages/logo.svg"), class: 'logo' %>
+	
+	<div class="main_container">
+	  <nav class="cl-effect-14" id="cl-effect-14">
+	    <a href="#work" class="menu-item">Work</a>
+	    <a href="#contact" class="menu-item">Who</a>
+	  </nav>
+	</div>
 
 <%= yield %>
 
