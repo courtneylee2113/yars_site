@@ -10,6 +10,7 @@ class VisitorController < ApplicationController
 			body: params[:contact][:body]
 		}
 		if UserMailer.contact_form(user).deliver_now
+			UserMailer.confirmation(user).deliver_now
 			redirect_to root_path, notice: 'Email Sent!'
 		else
 			redirecto_to root_path, notice: 'Email NOT Sent!'
