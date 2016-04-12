@@ -38,6 +38,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.3.3.1)
+      execjs
     best_debugger (1.0)
       better_errors
       binding_of_caller
@@ -49,6 +51,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (8.2.3)
     carrierwave (0.10.0)
@@ -315,7 +319,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   best_debugger
+  bootstrap-sass (~> 3.2.0)
   byebug
   carrierwave (= 0.10.0)
   coffee-rails (~> 4.1.0)
