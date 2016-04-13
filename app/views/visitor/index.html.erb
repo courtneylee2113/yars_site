@@ -1,34 +1,65 @@
-<%= image_tag ("https://s3.amazonaws.com/yarkukhtinprojectimages/logo.svg"), class: 'logo' %>
-
-<div class="main_container">
-  <nav class="cl-effect-14" id="cl-effect-14">
-    <a href="#work" class="menu-item">Work</a>
-    <a href="#contact" class="menu-item">Who</a>
-  </nav>
-</div>
-
-<div class="main">
-  <div id="work">
+<!-- portfolio section -->
+<div id="portfolio">
+  <div class="container">
     <div class="row">
-      <% @projects.each do |p| %>
-      <div class="col-lg-3 col-sm-6 col-xs-12">
-        <%= link_to(show_project_path(p)) do %>
-          <%= image_tag("#{p.base_image}", class: 'project-image') %>
-        <% end %>
+      <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 title">
+        <h2>Portfolio</h2>
+        <hr>
       </div>
-      <% end %>
+      <div class="col-md-12 col-sm-12"></div>
+      <div class="col-md-3 col-sm-3 wow fadeIn" data-wow-delay="0.6s">
+      	<a href="https://s3-us-west-1.amazonaws.com/twitter-shits/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery">
+      		<img src="https://s3-us-west-1.amazonaws.com/twitter-shits/portfolio-img1.jpg" alt="portfolio img">
+      	</a>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="contact-form">
-  <div id="contact">
-  	<%= simple_form_for(:contact, url: contact_form_path, method: :put) do |f| %>
-  		<%= f.input :full_name %>
-  		<%= f.input :email %>
-  		<%= f.input :body, as: :text, input_html: {rows: 5, cols: 20} %>
-
-  		<%= f.submit "Let's Chat" %>
-  	<% end %>
+<!-- contact section -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 title">
+        <h2>Contact Us</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoree.</p>
+      </div>
+      <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 contact-form wow fadeInUp" data-wow-delay="0.9s">
+        <form action="#" method="post">
+          <input type="text" class="form-control" placeholder="Name">
+          <input type="email" class="form-control" placeholder="Email">
+          <textarea class="form-control" placeholder="Message" rows="6"></textarea>
+          <input type="submit" class="form-control" value="SEND EMAIL">
+        </form>
+      </div>
+    </div>
   </div>
+</section>
+<!-- google map section -->
+<div class="google_map">
+  <div id="map-canvas"></div>
 </div>
+<!-- footer section -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h2 class="wow fadeIn" data-wow-delay="0.9s">Follow Us</h2>
+        <ul class="social-icon">
+          <li><a href="#" class="fa fa-facebook wow bounceIn" data-wow-delay="0.3s"></a></li>
+          <li><a href="#" class="fa fa-twitter wow bounceIn" data-wow-delay="0.6s"></a></li>
+          <li><a href="#" class="fa fa-behance wow bounceIn" data-wow-delay="0.9s"></a></li>
+          <li><a href="#" class="fa fa-dribbble wow bounceIn" data-wow-delay="0.9s"></a></li>
+          <li><a href="#" class="fa fa-github wow bounceIn" data-wow-delay="0.9s"></a></li>
+          <li><a href="#" class="fa fa-android wow bounceIn" data-wow-delay="0.9s"></a></li>
+          <li><a href="#" class="fa fa-phone wow bounceIn" data-wow-delay="0.9s"></a></li>
+        </ul>
+      </div>
+      <div class="col-md-12 col-sm-12 copyright">
+        <p>Copyright © 2084 Company Name 
+        
+        | Template by <a target="_blank" rel="nofollow" href="http://www.templatemo.com/tm-469-impulse">Impulse Design</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

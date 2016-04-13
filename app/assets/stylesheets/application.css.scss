@@ -11,6 +11,10 @@
  * file per style scope.
  *
  *= require component
+ *= require animate.min
+ *= require font-awesome.min
+ *= require nivo-lightbox
+ *= require templatemo-style.css
  *= require_tree .
  *= require_self
  */
@@ -18,54 +22,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  background-image: url("https://s3.amazonaws.com/yarkukhtinprojectimages/bg_main.svg");
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-a {
-  font-family: sans-serif !important;
-}
-
 .logo {
-  position: fixed;
-}
-
-.menu-item:hover {
-  text-decoration: none;
-  color: #50486B;
-}
-
-.menu-item {
-  color: #7a7a7a;
-  text-shadow: #fff 0px 1px 0px;
-  font-size: 12px;
-  font-family: "museo-sans-rounded";
-  display: inline-block;
-  margin-left: -38px;
-}
-
-.main_container {
-  position: fixed;
-  top: 150px;
-}
-
-.main {
-  position: fixed;
-  top: 300px;
-  width: 75%;
-}
-
-.contact-form {
-  position: fixed;
-  top: 600px;
-  width: 75%;
-}
-
-.project-image {
-  width: 218px;
-  height: 210px;
-  border-radius: 25px;
+	width:200px;
+	height:200px;
 }

@@ -580,8 +580,7 @@ nav a:focus {
 /* Effect 14: border switch */
 .cl-effect-14 a {
 	padding: 0 20px;
-	height: 45px;
-	line-height: 45px;
+  line-height: 50px;
 }
 
 .cl-effect-14 a::before,

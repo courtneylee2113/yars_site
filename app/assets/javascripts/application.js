@@ -16,4 +16,9 @@
 //= require bootstrap-sprockets
 //= require modernizr.custom
 //= require custom
+//= require nivo-lightbox.min
+//= require smoothscroll
+//= require jquery.sticky
+//= require jquery.parallax
+//= require wow.min
 //= require_tree .
