@@ -19,39 +19,39 @@
 @import "bootstrap";
 
 body {
-	background-image: url("https://s3.amazonaws.com/yarkukhtinprojectimages/bg_main.svg");
-	background-position: center center;
+  background-image: url("https://s3.amazonaws.com/yarkukhtinprojectimages/bg_main.svg");
+  background-position: center center;
   background-attachment: fixed;
   background-size: cover;
 }
+
 a {
-	font-family: sans-serif !important;
+  font-family: sans-serif !important;
 }
 
 .logo {
-	position: relative;
-	margin-top:89px;
-	margin-left:595px;
+  position: fixed;
 }
 
 .menu-item:hover {
-	text-decoration: none;
-	color: #50486B;
+  text-decoration: none;
+  color: #50486B;
 }
 
 .menu-item {
-	color:#7a7a7a;
-	text-shadow:#fff 0px 1px 0px;
-	font-size:12px;
-	font-family: "museo-sans-rounded";
-	display:inline-block;
-	margin-left: -38px;
+  color: #7a7a7a;
+  text-shadow: #fff 0px 1px 0px;
+  font-size: 12px;
+  font-family: "museo-sans-rounded";
+  display: inline-block;
+  margin-left: -38px;
 }
+
 .main_container {
-	position:relative;
-	left: 37%;
-  width: 360px;
+  position: fixed;
+  top: 150px;
 }
+
 #cl-effect-14 {
-	margin-left:125px;
+  // margin-left: 125px;
 }

@@ -1,33 +1,23 @@
 $(function(){
-	$('.secondary').hide();
-	
-	$('.static').hover(function() {
-		$('#static').hide();
-    $(this).toggleClass('animated', 'static');
-	}, function(){
-		$('#static').show();
-		$(this).toggleClass('animated', 'static');
-	});
-	// $('.primary').on({
- //    mouseenter: function() {
- //      $('.primary').hide();
-	// 		$(".secondary").show();  
- //    },
- //    mouseleave: function() {
- //    	$('.primary').show();
-	// 	$(".secondary").hide();
- //    }
-	// });
-	
-	(function(d) {
-    var config = {
-      kitId: 'jmh6yjc',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-	
+  var center = function () {
+    var wh = $(window).height();
+    ww = $(window).width();
+    ch = $('.logo').height();
+    cw = $('.logo').width();
+    t = wh / 2 - ch / 2;
+    l = ww / 2 - cw / 2;
+    $('.logo').offset({
+        top: '100px',
+        left: l
+    });
+    $('.main_container').offset({
+        top: '150px',
+        left: l
+    });
+  };
+  $(document).ready(center);
+  $(window).resize(center);
+
 	$('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
