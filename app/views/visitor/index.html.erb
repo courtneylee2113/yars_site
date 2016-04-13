@@ -1,18 +1,18 @@
-<h1>Visitor Index</h1>
+<div class="main">
+  <div id="work">
+  	<% @projects.each do |p| %>
+  		<%= link_to "#{p.name}", show_project_path(p) %>
 
-<div id="work">
-	<% @projects.each do |p| %>
-		<%= link_to "#{p.name}", show_project_path(p) %>
+  	<% end %>
+  </div>
 
-	<% end %>
-</div>
+  <div id="contact">
+  	<%= simple_form_for(:contact, url: contact_form_path, method: :put) do |f| %>
+  		<%= f.input :full_name %>
+  		<%= f.input :email %>
+  		<%= f.input :body, as: :text, input_html: {rows: 5, cols: 20} %>
 
-<div id="contact">
-	<%= simple_form_for(:contact, url: contact_form_path, method: :put) do |f| %>
-		<%= f.input :full_name %>
-		<%= f.input :email %>
-		<%= f.input :body, as: :text, input_html: {rows: 5, cols: 20} %>
-
-		<%= f.submit "Let's Chat" %>
-	<% end %>
+  		<%= f.submit "Let's Chat" %>
+  	<% end %>
+  </div>
 </div>

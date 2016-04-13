@@ -14,6 +14,9 @@ $(function(){
         top: '150px',
         left: l
     });
+    $('.main').offset({
+      left: l / 4
+    });
   };
   $(document).ready(center);
   $(window).resize(center);
