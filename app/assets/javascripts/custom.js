@@ -14,7 +14,7 @@ $(function(){
         top: '150px',
         left: l
     });
-    $('.main').offset({
+    $('.main, .contact-form').offset({
       left: l / 4
     });
   };
