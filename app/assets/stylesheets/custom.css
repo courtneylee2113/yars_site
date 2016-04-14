@@ -11,3 +11,24 @@
 	width:262px !important;
 	height:174px !important;
 }
+
+.fa {
+	color: #736999 !important;
+}
+
+.fa:hover {
+	background-color: #433D5A !important;
+}
+
+footer {
+	background: url('https://s3.amazonaws.com/yarkukhtinprojectimages/bg_main.svg') 50% 0 repeat-y fixed;
+	background-size: cover;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}

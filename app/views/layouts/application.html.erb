@@ -44,5 +44,27 @@
 
   <%= yield %>
 
+  <% if current_page?(:controller => 'visitor', :action => 'index') %>
+		<footer>
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-md-12 col-sm-12" style="color:black;">
+		        <h2 class="wow fadeIn" data-wow-delay="0.9s">Follow Me</h2>
+		        <ul class="social-icon">
+		          <li><a href="#" class="fa fa-dribbble wow bounceIn" data-wow-delay="0.9s"></a></li>
+		          <li><a href="#" class="fa fa-vimeo wow bounceIn" data-wow-delay="0.9s"></a></li>
+		          <li><a href="#" class="fa fa-linkedin wow bounceIn" data-wow-delay="0.9s"></a></li>
+		          <li><a href="#" class="fa fa-instagram wow bounceIn" data-wow-delay="0.9s"></a></li>
+		        </ul>
+		      </div>
+		      <div class="col-md-12 col-sm-12 copyright" style="color:black;">
+		        <p>Copyright © Yar Kukhtin 2016 
+		        <!-- | Template by <a target="_blank" rel="nofollow" href="http://www.templatemo.com/tm-469-impulse">Impulse Design</a> --></p>
+		      </div>
+		    </div>
+		  </div>
+		</footer>
+  <% end %>
+
 </body>
 </html>

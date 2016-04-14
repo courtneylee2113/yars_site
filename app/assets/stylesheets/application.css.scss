@@ -12,7 +12,6 @@
  *
  *= require component
  *= require animate.min
- *= require font-awesome.min
  *= require nivo-lightbox
  *= require templatemo-style.css
  *= require custom
@@ -22,3 +21,4 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
