@@ -1,3 +1,5 @@
+
+
 <%= link_to "Home", root_path %>
 <% if user_signed_in? %>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
@@ -5,6 +7,26 @@
   <%= link_to('Login', new_user_session_path)  %>
 <% end %>
 
+
+<div id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 title">
+        <h2>Portfolio</h2>
+        <hr>
+      </div>
+
+      <div class="col-md-12 col-sm-12"></div>
+      <% @projects.each do |p| %>
+        <div class="col-md-3 col-sm-3 wow fadeIn" data-wow-delay="0.6s">
+          <%= link_to(show_project_path(p)) do %>
+            <%= image_tag("#{p.base_image}", class: 'project-image') %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="main">
   <h1>Listing Projects</h1>

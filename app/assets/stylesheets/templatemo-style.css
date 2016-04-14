@@ -122,6 +122,7 @@ transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 #home {
 	background: url('https://s3.amazonaws.com/yarkukhtinprojectimages/bg_main.svg') 50% 0 repeat-y fixed;
 	color: #ffffff;
+	background-size: cover;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;

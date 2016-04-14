@@ -6,15 +6,19 @@
         <h2>Portfolio</h2>
         <hr>
       </div>
+
       <div class="col-md-12 col-sm-12"></div>
-      <div class="col-md-3 col-sm-3 wow fadeIn" data-wow-delay="0.6s">
-      	<a href="https://s3-us-west-1.amazonaws.com/twitter-shits/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery">
-      		<img src="https://s3-us-west-1.amazonaws.com/twitter-shits/portfolio-img1.jpg" alt="portfolio img">
-      	</a>
-      </div>
+      <% @projects.each do |p| %>
+      	<div class="col-md-3 col-sm-3 wow fadeIn" data-wow-delay="0.6s">
+	      	<%= link_to(show_project_path(p)) do %>
+	          <%= image_tag "#{p.base_image}", class: 'project-image' %>
+	        <% end %>
+	      </div>
+      <% end %>
     </div>
   </div>
 </div>
+
 <!-- contact section -->
 <section id="contact">
   <div class="container">
@@ -22,15 +26,15 @@
       <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 title">
         <h2>Contact Us</h2>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoree.</p>
       </div>
       <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 contact-form wow fadeInUp" data-wow-delay="0.9s">
-        <form action="#" method="post">
-          <input type="text" class="form-control" placeholder="Name">
-          <input type="email" class="form-control" placeholder="Email">
-          <textarea class="form-control" placeholder="Message" rows="6"></textarea>
-          <input type="submit" class="form-control" value="SEND EMAIL">
-        </form>
+        <%= simple_form_for(:contact, url: contact_form_path, method: :put) do |f| %>
+		  		<%= f.input :full_name, input_html: { class:"form-control" }, label: false, placeholder: 'Full Name' %>
+		  		<%= f.input :email, input_html: { class:"form-control" }, label: false, placeholder: 'Email Address'  %>
+		  		<%= f.input :body, as: :text, input_html: {rows: 5, cols: 20, class:"form-control"}, label: false, placeholder: 'Message'  %>
+
+		  		<%= f.submit "Let's Chat", class:"form-control" %>
+		  	<% end %>
       </div>
     </div>
   </div>

@@ -7,9 +7,10 @@ var map = '';
 var center;
 
 function initialize() {
+    var toronto = new google.maps.LatLng(43.6532, -79.3832)
     var mapOptions = {
-      zoom: 16,
-      center: new google.maps.LatLng(13.758468, 100.567481),
+      zoom: 14,
+      center: toronto,
       scrollwheel: false
     };
   
@@ -21,9 +22,19 @@ function initialize() {
   
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(center);
+        addMarker(toronto, map);
     });
 }
 
+function addMarker(location, map) {
+  // Add the marker at the clicked location, and add the next-available label
+  // from the array of alphabetical characters.
+  var marker = new google.maps.Marker({
+    position: location,
+    label: labels[labelIndex++ % labels.length],
+    map: map
+  });
+}
 function calculateCenter() {
   center = map.getCenter();
 }
@@ -64,7 +75,7 @@ $(function(){
 
   }
   initParallax();
-  
+
   var center = function () {
     var wh = $(window).height();
     ww = $(window).width();
