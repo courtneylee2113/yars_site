@@ -47,6 +47,11 @@ function loadGoogleMap(){
 }
 
 $(function(){
+
+  $(window).load(function(){
+    $('.nivo-lightbox-close').text("X").css('font-size', '25px').css('text-decoration','none');
+  });
+  
   // ===== Scroll to Top ==== 
   $(window).scroll(function() {
       if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
@@ -89,28 +94,6 @@ $(function(){
 
   }
   initParallax();
-
-  var center = function () {
-    var wh = $(window).height();
-    ww = $(window).width();
-    ch = $('.logo').height();
-    cw = $('.logo').width();
-    t = wh / 2 - ch / 2;
-    l = ww / 2 - cw / 2;
-    $('.logo').offset({
-        top: '100px',
-        left: l - 10
-    });
-    $('.main_container').offset({
-        top: '150px',
-        left: l
-    });
-    $('.main, .contact-form').offset({
-      left: l / 4
-    });
-  };
-  // $(document).ready(center);
-  // $(window).resize(center);
 
 	$('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

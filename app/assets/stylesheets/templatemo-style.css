@@ -119,7 +119,7 @@ transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 }
 }
 /* home section */
-#home {
+#home, #show-page {
 	background: url('https://s3.amazonaws.com/yarkukhtinprojectimages/bg_main.svg') 50% 0 repeat-y fixed;
 	color: #ffffff;
 	background-size: cover;
@@ -184,7 +184,8 @@ transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 }
 .navbar-default .navbar-toggle {
 	border: none;
-	padding-top: 12px;
+	margin-top: 20px;
+  margin-left: 100px;
 }
 .navbar-default .navbar-toggle .icon-bar {
 	background: #433D5A;

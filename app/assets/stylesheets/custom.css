@@ -98,3 +98,13 @@ footer {
     color: #fff;
     top: 5px;
 }
+
+.show-image {
+	width:400px !important;
+	height:auto;
+}
+
+.navbar-default .navbar-collapse {
+  border-color: #e7e7e7;
+  background: whitesmoke !important;
+}
